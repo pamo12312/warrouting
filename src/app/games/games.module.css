@@ -1,0 +1,21 @@
+
+.home{
+    background-color: grey;
+}
+.card{
+  margin: 10px;
+    border-radius: 10px;
+    padding: 10px;
+
+    border-style: solid;
+
+}
+.container{
+    display: flex;
+}
+.gameButton{
+
+    border-style: solid;
+    border-radius: 10px;
+    padding: 10px;
+}

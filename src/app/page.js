@@ -1,95 +1,44 @@
 import Image from "next/image";
 import styles from "./page.module.css";
-
+import Link from 'next/link'
 export default function Home() {
   return (
-    <main className={styles.main}>
-      <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>src/app/page.js</code>
-        </p>
-        <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
-        </div>
-      </div>
 
-      <div className={styles.center}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
+<div>
+    <div className={styles.container}>
+Uvodni stranka     </div>
+    <div className={styles.content}>
+        Projekt: Aplikace pro Správu Her<br/>
+        Tento projekt se zaměřuje na vytvoření jednoduché aplikace pro správu her využívající framework Next.js a jeho
+        nový App Router. Aplikace má za cíl usnadnit uživatelům organizaci a sledování her, které mají ve své sbírce
+        nebo které ještě chtějí zahrát.
+        <br/>
+        Funkce Aplikace<br/>
+        Úvodní Stránka<br/>
+        <br/>
+        Na úvodní stránce se uživatelé dozvědí stručné představení aplikace a budou mít možnost přejít na Dashboard, kde
+        <br/> naleznou přehled všech dostupných her.<br/>
 
-      <div className={styles.grid}>
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p>Find in-depth information about Next.js features and API.</p>
-        </a>
+        Dashboard<br/>
+        <br/>
+        Dashboard zobrazuje seznam všech her spolu s jejich názvy a žánry. U každé hry je k dispozici odkaz nebo
+        <br/> tlačítko, které uživatele přenese na detailovou stránku dané hry.<br/>
+        <br/>
+        Detail Hry<br/>
+        <br/>
+        Detail hry poskytuje uživateli podrobné informace o vybrané hře, včetně názvu, žánru, data vydání a krátkého
+        <br/> popisu. Z této stránky může uživatel také přejít na stránku pro editaci informací o hře.
 
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Learn <span>-&gt;</span>
-          </h2>
-          <p>Learn about Next.js in an interactive course with&nbsp;quizzes!</p>
-        </a>
+        Editace Hry<br/>
 
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p>Explore starter templates for Next.js.</p>
-        </a>
+        <br/> Stránka editace hry umožňuje uživateli upravit informace o vybrané hře prostřednictvím formuláře. Po
+        úspěšné
+        editaci se uživatel vrátí zpět na detail hry.<br/>
 
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
-  );
+
+    </div>
+        <button className={styles.button}>
+    <Link className={styles.link} href="/games">Dash Board link</Link>
+        </button>
+</div>)
 }
