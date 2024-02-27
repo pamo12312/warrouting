@@ -1,56 +1,68 @@
-import styles from './games.module.css'
+import styles from './games.module.css';
 import Link from "next/link";
-export default function Page() {
-    const gamesData = [
-        {
-            "id": 1,
-            "title": "Public what fly least",
-            "genre": "Mystery",
-            "release_date": "2018-09-13",
-            "description": "Friend usually treat general smile. Doctor onto civil. From appear reason television probably. Give economy what different especially particular."
-        },
-        {
-            "id": 2,
-            "title": "Close court side far",
-            "genre": "Action",
-            "release_date": "2009-12-09",
-            "description": "Kitchen party receive plan quickly choose three. Wear pay form former discuss. Agreement check half happy. Public market difficult enough."
-        },
-        {
-            "id": 20,
-            "title": "Question heart bad",
-            "genre": "Drama",
-            "release_date": "2011-04-06",
-            "description": "It both task compare order tell really open. Fire appear movement drive child. Personal might office good month. Technology key beat. Artist between scientist piece."
-        }
-    ];
 
-    return (<div>
-        <h1 className="home">Games</h1>
+export const gamesData = [
+    {
+        "id": 1,
+        "title": "The Lost Expedition",
+        "genre": "Adventure",
+        "release_date": "2021-05-15",
+        "description": "Embark on a perilous journey through uncharted territories in search of a legendary treasure."
+    },
+    {
+        "id": 2,
+        "title": "Galactic Conquest",
+        "genre": "Strategy",
+        "release_date": "2020-11-28",
+        "description": "Build your empire, conquer planets, and lead your armies to victory in this epic space strategy game."
+    },
+    {
+        "id": 3,
+        "title": "Dark Shadows",
+        "genre": "Horror",
+        "release_date": "2019-10-31",
+        "description": "Explore haunted locations, uncover dark secrets, and survive terrifying encounters with supernatural beings."
+    },
+    {
+        "id": 4,
+        "title": "Street Legends",
+        "genre": "Action",
+        "release_date": "2018-07-22",
+        "description": "Rise through the ranks of the underground street racing scene, customize your ride, and take on rival crews."
+    },
+    {
+        "id": 5,
+        "title": "Fantasy Quest",
+        "genre": "RPG",
+        "release_date": "2017-03-10",
+        "description": "Embark on an epic adventure, battle mythical creatures, and unravel the mysteries of a magical world."
+    },
+    {
+        "id": 6,
+        "title": "Minecraft",
+        "genre": "Sandbox",
+        "release_date": "2009-11-07",
+        "description": "This is the best game you will ever play. Nothing is better then this. Fortnite is for script kiddies."
+    }
+]
 
-
-
-    <div>
-        <h1>Seznam her</h1>
-        <div className={styles.container}>
-            {gamesData.map(game => (
-                <div key={game.id}>
-                    <div className={styles.card}>
-                        <h2>{game.title}</h2>
-                        <p><strong>Žánr:</strong> {game.genre}</p>
-                        <p><strong>Datum vydání:</strong> {game.release_date}</p>
-                        <p><strong>Popis:</strong> {game.description}</p>
-                        <button className={styles.gameButton}>
-                            <Link className={styles.link} href={`/games/${game.id}`}>
-                                Detail hry
-                            </Link>
-
-                        </button>
-                    </div>
-                </div>
-            ))}
+export default function Dashboard() {
+    return (
+        <div>
+            <p className={styles.nadpis}>Tvoje hry</p>
+            <ul className={styles.cardlist}>
+                {gamesData.map(game => (
+                    <li key={game.id} className={styles.card}>
+                        <h3 className={styles.title}>{game.title}</h3>
+                        <p className={styles.genre}><strong>Žánr:</strong> {game.genre}</p>
+                        <p className={styles.releaseDate}><strong>Datum vydání:</strong> {game.release_date}</p>
+                        <p className={styles.description}><strong>Popis:</strong> {game.description}</p>
+                        <Link href={`/games/${game.id}/edit`}>
+                            <p className={styles.editButton}>Edit</p>
+                        </Link>
+                    </li>
+                ))}
+            </ul>
         </div>
-    </div>
-        </div>
-    )
+    );
 }

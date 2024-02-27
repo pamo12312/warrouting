@@ -1,4 +1,3 @@
-import Image from "next/image";
 import styles from "./page.module.css";
 import Link from 'next/link'
 export default function Home() {
@@ -6,7 +5,7 @@ export default function Home() {
 
 <div>
     <div className={styles.container}>
-Uvodni stranka     </div>
+Úvodni stránka     </div>
     <div className={styles.content}>
         Projekt: Aplikace pro Správu Her<br/>
         Tento projekt se zaměřuje na vytvoření jednoduché aplikace pro správu her využívající framework Next.js a jeho

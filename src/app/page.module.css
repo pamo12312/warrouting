@@ -15,5 +15,6 @@ background-color: blue;
   color: white;
   border-style: none;
     border-radius: 10px;
-
+display: flex;
+  justify-content: center;
 }
