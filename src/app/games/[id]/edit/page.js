@@ -19,10 +19,6 @@ export default function Page({ params }) {
         console.log("Popis:", description);
     };
 
-    const handleGoBack = () => {
-        window.location.href = '/games';
-    };
-
     return (
         <div className={styles.gameDetails}>
             <input type="text" className={styles.title} value={title} onChange={(e) => setTitle(e.target.value)} />
@@ -30,7 +26,7 @@ export default function Page({ params }) {
             <input type="text" value={releaseDate} onChange={(e) => setReleaseDate(e.target.value)} />
             <input type="text" value={description} onChange={(e) => setDescription(e.target.value)} />
             <button className={styles.saveButton} onClick={handleSave}>Save</button>
-            <button className={styles.goBackButton} onClick={handleGoBack}>Go Back</button>
+            <button className={styles.goBackButton} ><Link href="/games">About Us</Link></button>
         </div>
     );
 }
