@@ -1,3 +1,4 @@
+"use client"
 import styles from './games.module.css';
 import Link from "next/link";
 
@@ -46,6 +47,16 @@ export const gamesData = [
     }
 ]
 
+export function GameListUpdate({id,  title, genre, release_date, description}){
+    let game = gamesData.find(game => game.id === id);
+    if (game) {
+        game.release_date = release_date;
+        game.title = title;
+        game.genre = genre;
+        game.description = description;
+    }
+    console.log(gamesData);
+}
 export default function Dashboard() {
     return (
         <div>
