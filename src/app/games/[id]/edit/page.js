@@ -26,13 +26,18 @@ export default function Page({ params }) {
     };
 
     return (
-        <div className={styles.gameDetails}>
-            <input type="text" className={styles.title} value={title} onChange={(e) => setTitle(e.target.value)} />
-            <input type="text" value={genre} onChange={(e) => setGenre(e.target.value)} />
-            <input type="text" value={releaseDate} onChange={(e) => setReleaseDate(e.target.value)} />
-            <input type="text" value={description} onChange={(e) => setDescription(e.target.value)} />
-            <button className={styles.saveButton} onClick={handleSave}>Save</button>
-            <button className={styles.goBackButton}><Link href="/games">Back</Link></button>
+        <div className={`${styles.gameDetails} game-details`}>
+            <input type="text" className={styles.title} value={title}
+                   onChange={(e) => setTitle(e.target.value)}/>
+            <input type="text" className={styles.genre}  value={genre}
+                   onChange={(e) => setGenre(e.target.value)}/>
+            <input type="text" className={styles.releaseDate} value={releaseDate}
+                   onChange={(e) => setReleaseDate(e.target.value)}/>
+            <input type="text" className={styles.description}  value={description}
+                   onChange={(e) => setDescription(e.target.value)}/>
+            <button className={styles.savebutton} onClick={handleSave}>Save</button>
+            <button className={styles.gobackbutton} ><Link href="/games">Back</Link></button>
         </div>
+
     );
 }

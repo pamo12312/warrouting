@@ -59,21 +59,21 @@ export function GameListUpdate({id,  title, genre, release_date, description}){
 }
 export default function Dashboard() {
     return (
-        <div>
-            <p className={styles.nadpis}>Tvoje hry</p>
-            <ul className={styles.cardlist}>
+        <div className={styles.dashboard}>
+            <p className={styles.nadpis}>Vaše hry</p>
+            <div className={styles.seznamKaret}>
                 {gamesData.map(game => (
-                    <li key={game.id} className={styles.card}>
-                        <h3 className={styles.title}>{game.title}</h3>
-                        <p className={styles.genre}><strong>Žánr:</strong> {game.genre}</p>
-                        <p className={styles.releaseDate}><strong>Datum vydání:</strong> {game.release_date}</p>
-                        <p className={styles.description}><strong>Popis:</strong> {game.description}</p>
+                    <div key={game.id} className={styles.karta}>
+                        <div className={styles.nadpisHry}>{game.title}</div>
+                        <div className={styles.zanr}><strong>Žánr:</strong> {game.genre}</div>
+                        <div className={styles.datumVydani}><strong>Datum vydání:</strong> {game.release_date}</div>
+                        <div className={styles.popis}><strong>Popis:</strong> {game.description}</div>
                         <Link href={`/games/${game.id}/edit`}>
-                            <p className={styles.editButton}>Edit</p>
+                            <p className={styles.tlacitkoUpravit}>Upravit</p>
                         </Link>
-                    </li>
+                    </div>
                 ))}
-            </ul>
+            </div>
         </div>
     );
 }

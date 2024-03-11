@@ -4,9 +4,11 @@
     width: 100%;
     text-align: center;
     margin-top: 25px;
+    color: black;
+
 }
 
-.cardlist {
+.seznamKaret {
     margin-top: 50px;
     display: flex;
     justify-content: space-around;
@@ -14,20 +16,24 @@
     list-style-type: none;
 }
 
-.card {
+.karta {
     width: calc(30% - 20px);
     height: 250px;
     margin-bottom: 20px;
     border: white 1px solid;
     padding: 10px;
     border-radius: 10px;
+    color: #ffffff;
+    background-color: #000000;
 }
 
-.editButton {
-    color: #ffffff;
-    border: white 1px solid;
+.tlacitkoUpravit {
+    color: #000000;
+    background-color: #ffffff;
+
     border-radius: 20px;
     width: 50px;
     padding: 5px 10px;
     margin-top: 10px;
+    text-decoration: none;
 }
