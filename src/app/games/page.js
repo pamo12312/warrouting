@@ -55,6 +55,7 @@ export function GameListUpdate({id,  title, genre, release_date, description}){
         game.genre = genre;
         game.description = description;
     }
+
     console.log(gamesData);
 }
 export default function Dashboard() {
